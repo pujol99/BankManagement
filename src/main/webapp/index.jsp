@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>MyMoney</title>
 
     <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
     <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
@@ -17,26 +17,20 @@
 <body>
 
     <div class="w3-row-padding">
-        <!-- Left Column -->
+        <!-- Side bar -->
         <div class="w3-container w3-col m3 w3-hide-small">
-            <div id="rcolumn">
-                <p></p>
+            <div id="lcolumn">
+                <jsp:include page="${sidebar}" />
             </div>
         </div>
 
-        <!-- Middle Column -->
+        <!-- Main page -->
         <div class="e3-container w3-col m6">
             <div id="content">
                 <jsp:include page="${content}" />
             </div>
         </div>
 
-        <!-- Right Column -->
-        <div class="w3-container w3-col m3 w3-hide-small">
-            <div id="lcolumn">
-                <p></p>
-            </div>
-        </div>
     </div>
 
 </body>

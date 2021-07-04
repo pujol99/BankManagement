@@ -2,8 +2,8 @@ $(document).ready(function () {
     $.ajaxSetup({ cache: false }); //Avoids Internet Explorer caching!
 
 
-    $(document).on("click", ".getList", function (event) {
-        $("#content").load("GetTransactions");
+    $(document).on("click", ".menu", function (event) {
+        $("#content").load($(this).attr("id"));
         event.preventDefault();
     });
 });

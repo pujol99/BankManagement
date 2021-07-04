@@ -12,7 +12,8 @@ public class MainController extends Base {
     @Override
     public void doAction() throws ServletException, IOException  {
 
-        request.setAttribute("content", "button.jsp");
+        request.setAttribute("sidebar", "sidebar.jsp");
+        request.setAttribute("content", "blank.jsp");
         redirect("index.jsp");
     }
 
