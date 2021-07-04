@@ -21,7 +21,28 @@ public class ManageMoney extends Manager {
         List<Transaction> transactions = new ArrayList<>();
 
         try {
-            PreparedStatement statement = db.prepareStatement("SELECT * FROM transactions ORDER BY date ASC;");
+            PreparedStatement statement = db.prepareStatement(
+                    "SELECT * FROM transactions ORDER BY date ASC;");
+
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                transactions.add(fillTransaction(rs));}
+
+
+            close(rs, statement);
+        } catch (SQLException e) {
+            e.printStackTrace();}
+
+        return transactions;
+    }
+
+    public List<Transaction> getTransactionsMonth(){
+
+        List<Transaction> transactions = new ArrayList<>();
+
+        try {
+            PreparedStatement statement = db.prepareStatement(
+                    "SELECT * FROM bank.transactions WHERE MONTH(date) = MONTH(curdate()) ORDER BY date ASC;");
 
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
@@ -60,7 +81,7 @@ public class ManageMoney extends Manager {
         for (Transaction t : transactions) {
             map = new HashMap<Object,Object>();
 
-            map.put("x", i++);
+            map.put("x", t.getDate().getMonth());
             map.put("y", t.getTotal_money());
 
             list.add(map);

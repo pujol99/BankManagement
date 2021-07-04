@@ -2,11 +2,9 @@
          pageEncoding="UTF-8" session="true"%>
 
 
-<ul>
-    <li>
-        <a class="menu" id="GetTransactions">Current history</a>
-    </li>
-    <li>
-        Future prediction
-    </li>
-</ul>
+<div class="sidebar-element menu" id="GetTransactions">
+    <a>History Report</a>
+</div>
+<div class="sidebar-element menu" id="GetTransactionsMonth">
+    <a >Month Report</a>
+</div>

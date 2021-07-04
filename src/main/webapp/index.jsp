@@ -8,29 +8,20 @@
     <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
     <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
 
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
-
-    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="./static/css/style.css">
+    <script src="./static/js/script.js"></script>
 </head>
 
 <body>
 
-    <div class="w3-row-padding">
-        <!-- Side bar -->
-        <div class="w3-container w3-col m3 w3-hide-small">
-            <div id="lcolumn">
+    <div id="mainpage">
+        <div id="sidebar">
                 <jsp:include page="${sidebar}" />
-            </div>
         </div>
 
-        <!-- Main page -->
-        <div class="e3-container w3-col m6">
-            <div id="content">
+        <div id="content">
                 <jsp:include page="${content}" />
-            </div>
         </div>
-
     </div>
 
 </body>

@@ -6,6 +6,9 @@
 <script>
     var chart = new CanvasJS.Chart("chartContainer", {
         theme: "dark1",
+        title: {
+            text: "Chart"
+        },
         animationEnabled: true,
         data: [{
             type: "line",
@@ -17,9 +20,11 @@
 
 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
 
-<ul>
+<div class="list">
     <c:forEach var="transaction" items="${transactions}">
-        <li>Transaction ${transaction.concept}, (${transaction.date}) for ${transaction.value}</li>
+        <div class="list-element">
+            <span><b>${transaction.concept}</b> ${transaction.value} (${transaction.date}) </span>
+        </div>
     </c:forEach>
-</ul>
+</div>
 
