@@ -21,7 +21,7 @@ public class ManageMoney extends Manager {
         List<Transaction> transactions = new ArrayList<>();
 
         try {
-            PreparedStatement statement = db.prepareStatement("SELECT * FROM transactions;");
+            PreparedStatement statement = db.prepareStatement("SELECT * FROM transactions ORDER BY date ASC;");
 
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
@@ -56,12 +56,12 @@ public class ManageMoney extends Manager {
         Gson gsonObj = new Gson();
         Map<Object,Object> map = null;
         List<Map<Object,Object>> list = new ArrayList<Map<Object,Object>>();
-
+        int i = 0;
         for (Transaction t : transactions) {
             map = new HashMap<Object,Object>();
 
-            map.put("x", t.getDate());
-            map.put("y", t.getValue());
+            map.put("x", i++);
+            map.put("y", t.getTotal_money());
 
             list.add(map);
         }

@@ -19,7 +19,7 @@ public class GetTransactions extends Base{
         request.setAttribute("transactions", transactions);
 
         String json = moneyManager.getTransactionsJson(transactions);
-        request.setAttribute("dataPoints", json);
+        request.setAttribute("json", json);
 
         redirect("transactionsListView.jsp");
     }
